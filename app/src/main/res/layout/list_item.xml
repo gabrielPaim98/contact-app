@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="tk.gabrielpaim.mycontacts.Contact" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ageTv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gabriel"
+            android:text="@{contact.name}" />
+
+        <TextView
+            android:id="@+id/ageTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/nameTv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/phoneTv"
+            tools:text="22"
+            android:paddingHorizontal="8dp"
+            android:text="@{contact.age}" />
+
+        <TextView
+            android:id="@+id/phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ageTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="71 98121-3232"
+            android:text="@{contact.phoneNumber}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
